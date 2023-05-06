@@ -1,14 +1,27 @@
 package DataPerikananController
 
 import (
+	"html/template"
 	"net/http"
 )
 
 func Index(response http.ResponseWriter, request *http.Request) {
 
+	temp, err := template.ParseFiles("views/DataPerikanan/index.html")
+	if err != nil {
+		panic(err)
+	}
+	temp.Execute(response, nil)
+
 }
 
 func Add(response http.ResponseWriter, request *http.Request) {
+
+	temp, err := template.ParseFiles("views/DataPerikanan/add.html")
+	if err != nil {
+		panic(err)
+	}
+	temp.Execute(response, nil)
 
 }
 

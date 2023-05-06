@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Data Perikanan Tangkap Golang</title>
+  </head>
+ 
+  <body>
+    <div class="container mt-5">
+        <h3>Tambah Data Perikanan Tangkap</h3>
+        <a href="/Data Perikanan" class="btn btn-big btn-primary">Lihat Data</a>
+        <hr/>
+
+        <form action="/DataPerikanan/add" method="post">
+            <div class="form-group">
+                <label for="">Nama Lengkap</label>
+                <input type="text" name="Nama_Lengkap" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">NIK</label>
+                <input type="text" name="NIK" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">UkuranKapal</label>
+                <input type="text" name="Ukuran_Kapal" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">AlatTangkap</label>
+                <input type="text" name="Alat_Tangkap" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">JumlahTangkapan</label>
+                <input type="text" name="Jumlah_Tangkapan" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Alamat</label>
+                <textarea name="Alamat" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">No.Hp</label>
+                <input type="text" name="no_hp" class="form-control">
+            </div>
+        </form>
+       
+    </div>
+</body>
+</html>
