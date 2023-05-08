@@ -9,13 +9,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Data Perikanan Tangkap Golang</title>
+
+    <style> 
+        .container {
+            max-width: 720px
+        }
+    </style>
+
   </head>
  
   <body>
     <div class="container mt-5">
         <h3>Tambah Data Perikanan Tangkap</h3>
-        <a href="/Data Perikanan" class="btn btn-big btn-primary">Lihat Data</a>
+        <a href="/DataPerikanan" class="btn btn-big btn-primary">Lihat Data</a>
         <hr/>
+
+        {{ if .pesan }}
+            <div class=""alert alert-succes">
+            {{ .pesan }}
+            </div>
+        {{ end }}
+
 
         <form action="/DataPerikanan/add" method="post">
             <div class="form-group">
@@ -27,25 +41,26 @@
                 <input type="text" name="NIK" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">UkuranKapal</label>
+                <label for="">Ukuran Kapal</label>
                 <input type="text" name="Ukuran_Kapal" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">AlatTangkap</label>
+                <label for="">Alat Tangkap</label>
                 <input type="text" name="Alat_Tangkap" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">JumlahTangkapan</label>
+                <label for="">Jumlah Tangkapan</label>
                 <input type="text" name="Jumlah_Tangkapan" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Alamat</label>
-                <textarea name="Alamat" class="form-control">
+                <textarea name="Alamat" class="form-control"> </textarea>
             </div>
             <div class="form-group">
                 <label for="">No.Hp</label>
                 <input type="text" name="no_hp" class="form-control">
             </div>
+            <button type="submit" class="btn-btn-primary">Simpan Data</button>
         </form>
        
     </div>
