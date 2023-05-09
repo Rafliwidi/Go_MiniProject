@@ -1,6 +1,6 @@
 package entities
 
-type DataPerikanan struct {
+type fishes struct {
 	id              int64
 	NamaLengkap     string
 	NIK             string

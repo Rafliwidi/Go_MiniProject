@@ -12,7 +12,7 @@
 
     <style> 
         .container {
-            max-width: 720px
+            max-width: 520px
         }
     </style>
 
@@ -21,17 +21,17 @@
   <body>
     <div class="container mt-5">
         <h3>Tambah Data Perikanan Tangkap</h3>
-        <a href="/DataPerikanan" class="btn btn-big btn-primary">Lihat Data</a>
+        <a href="/fishes" class="btn btn-big btn-primary">Lihat Data</a>
         <hr/>
 
         {{ if .pesan }}
-            <div class=""alert alert-succes">
+            <div class="alert alert-succes">
             {{ .pesan }}
             </div>
         {{ end }}
 
 
-        <form action="/DataPerikanan/add" method="post">
+        <form action="/fishes/add" method="post">
             <div class="form-group">
                 <label for="">Nama Lengkap</label>
                 <input type="text" name="Nama_Lengkap" class="form-control">
@@ -60,7 +60,8 @@
                 <label for="">No.Hp</label>
                 <input type="text" name="no_hp" class="form-control">
             </div>
-            <button type="submit" class="btn-btn-primary">Simpan Data</button>
+        
+        <button type="submit" class="btn-btn-primary">Simpan Data</button>
         </form>
        
     </div>

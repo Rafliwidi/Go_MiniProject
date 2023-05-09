@@ -14,7 +14,7 @@
   <body>
     <div class="container mt-5">
         <h3>Data Perikanan Tangkap</h3>
-        <a href="/DataPerikanan/add" class="btn btn-big btn-primary">Menambahkan Data Baru</a>
+        <a href="/fishes/add" class="btn btn-big btn-primary">Menambahkan Data Baru</a>
         <hr/>
 
         <table class="table table-striped table-hover">
@@ -29,6 +29,21 @@
                     <th>No.Hp</th>
                 </tr>
             </thead>
+            <tbody
+                {{ range. fishes }}
+                    <tr>
+                        <td>{{ .NamaLengkap }} </td>
+                        <td>{{ .NIK }} </td>
+                        <td>{{ .UkuranKapal }} </td>
+                        <td>{{ .AlatTangkap }} </td>
+                        <td>{{ .JumlahTangkapan }} </td>
+                        <td>{{ .Alamat }} </td>
+                        <td>{{ .Nohp }} </td>
+                        <td>
+                            <a href="/fishes/edit?id={{id}}" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="/fishes/delete?id={{id}}"  oneclick="return confirm('Anda ingin menghapus data?')" class="btn btn-sm btn-danger">Hapus</a>
+                        </td>
+                    </tr>
         </table>
     </div>
 

@@ -3,18 +3,18 @@ package main
 import (
 	"net/http"
 
-	"github.com/controllers/DataPerikananController"
+	"mini-project/controllers/fishesController"
 )
 
 func main() {
 
-	// Data Perikanan
-	http.HandleFunc("/", DataPerikananController.Index)
-	http.HandleFunc("/DataPerikanan", DataPerikananController.Index)
-	http.HandleFunc("/DataPerikanan/index", DataPerikananController.Index)
-	http.HandleFunc("/DataPerikanan/add", DataPerikananController.Add)
-	http.HandleFunc("/DataPerikanan/edit", DataPerikananController.Edit)
-	http.HandleFunc("/DataPerikanan/delete", DataPerikananController.Delete)
+	// fishes
+	http.HandleFunc("/", fishesController.Index)
+	http.HandleFunc("/fishes", fishesController.Index)
+	http.HandleFunc("/fishes/index", fishesController.Index)
+	http.HandleFunc("/fishes/add", fishesController.Add)
+	http.HandleFunc("/fishes/edit", fishesController.Edit)
+	http.HandleFunc("/fishes/delete", fishesController.Delete)
 
 	http.ListenAndServe(":8000", nil)
 }

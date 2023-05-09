@@ -6,13 +6,14 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func DBconnection() (sql.DB, error) {
+func DBconnection() (*sql.DB, error) {
 	dbDriver := "mysql"
 	dbUser := "root"
 	dbPass := ""
-	dbName := "mini project golang"
+	dbName := "fishes"
 
-	db, err := sql.Open(dbDriver,dbUser+":"+dbPass+"@",+dbName)
-	return *db, err
+	db, err := sql.Open(dbDriver, dbUser+":"+dbPass+"@/"+dbName)
+
+	return db, err
 
 }

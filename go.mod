@@ -1,4 +1,4 @@
-module github.com
+module mini-project
 
 go 1.20
 
