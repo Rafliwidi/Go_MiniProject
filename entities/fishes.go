@@ -1,7 +1,7 @@
 package entities
 
-type fishes struct {
-	id              int64
+type Fishes struct {
+	Id              int64
 	NamaLengkap     string
 	NIK             string
 	UkuranKapal     string
