@@ -77,3 +77,21 @@ func (p *fishesmodel) Find(id int64, fishes *entities.Fishes) error {
 		&fishes.Alamat, 
 		&fishes.Nohp)
 }
+
+func (p *fishesmodel) Update(fishes entities.Fishes) error {
+
+	_, err := p.conn.Exec("update fishes set nama_lengkap = ?, nik = ?, ukuran_kapal = ?, alat_tangkap = ?, jumlah_tangkapan = ?, alamat = ?, no_hp= ? where id =?",
+fishes.NamaLengkap, fishes.NIK, fishes.UkuranKapal, fishes.AlatTangkap, fishes.JumlahTangkapan, fishes.Alamat, fishes.Nohp, fishes.Id)
+
+if err != nil {
+	return err
+}
+
+return nil
+
+
+}
+
+func (p *fishesmodel) Delete(id int64) {
+	p.conn.Exec("delete from fishes where id = ?", id)
+} 

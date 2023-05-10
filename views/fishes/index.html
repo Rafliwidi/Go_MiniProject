@@ -41,8 +41,8 @@
                         <td>{{ .Alamat }} </td>
                         <td>{{ .Nohp }} </td>
                         <td>
-                            <a href="/fishes/edit" class="btn btn-sm btn-warning">Edit Data</a>
-                            <a href="/fishes/delete" oneclick="return confirm('Anda ingin menghapus data?')" class="btn btn-sm btn-danger">Hapus Data</a>
+                            <a href="/fishes/edit?id={{.Id}}" class="btn btn-sm btn-warning">Edit Data</a>
+                            <a href="/fishes/delete?id={{.Id}}" oneclick="return confirm('Anda ingin menghapus data?')" class="btn btn-sm btn-danger">Hapus Data</a>
                         </td>
                     </tr>
                 {{ end }}

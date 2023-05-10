@@ -94,10 +94,13 @@ func Edit(response http.ResponseWriter, request *http.Request) {
 			panic(err)
 		}
 		temp.Execute(response, data)
+
 	} else if request.Method == http.MethodPost {
+		
 		request.ParseForm()
 
 		var fishes entities.Fishes
+		fishes.Id, _ = strconv.ParseInt(request.Form.Get("id"),10 , 64)
 		fishes.NamaLengkap = request.Form.Get("Nama_Lengkap")
 		fishes.NIK = request.Form.Get("NIK")
 		fishes.UkuranKapal = request.Form.Get("Ukuran_Kapal")
@@ -113,8 +116,8 @@ func Edit(response http.ResponseWriter, request *http.Request) {
 		if vErrors != nil {
 			data["validation"] =vErrors
 		} else {
-			data["pesan"] = "Data Fishes Berhasil Disimpan"
-			fishesmodel.Create(fishes)
+			data["pesan"] = "Data Fishes Berhasil Diperbarui"
+			fishesmodel.Update(fishes)
 		
 		}
 		
@@ -126,5 +129,15 @@ func Edit(response http.ResponseWriter, request *http.Request) {
 }
 
 func Delete(response http.ResponseWriter, request *http.Request) {
+
+	queryString := request.URL.Query()
+	id,_ := strconv.ParseInt(queryString.Get("id"),10, 64)
+
+	fishesmodel.Delete(id)
+
+	http.Redirect(response, request, "/fishes", http.StatusSeeOther)
+
+
+
 
 }
