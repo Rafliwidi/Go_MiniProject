@@ -2,11 +2,11 @@ package entities
 
 type Fishes struct {
 	Id              int64
-	NamaLengkap     string
-	NIK             string
-	UkuranKapal     string
-	AlatTangkap     string
-	JumlahTangkapan string
-	Alamat          string
-	Nohp            string
+	NamaLengkap    	string 	`validate:"required"` 
+	NIK             string	`validate:"required"`
+	UkuranKapal     string	`validate:"required"` 
+	AlatTangkap     string	`validate:"required"`  
+	JumlahTangkapan string	`validate:"required"`  
+	Alamat          string	`validate:"required"`
+	Nohp            string	`validate:"required"` 
 }

@@ -22,15 +22,16 @@
                 <tr>
                     <th>Nama Lengkap</th>
                     <th>NIK</th>
-                    <th>UkuranKapal</th>
-                    <th>AlatTangkap</th>
-                    <th>JumlahTangkapan</th>
+                    <th>Ukuran Kapal</th>
+                    <th>Alat Tangkap</th>
+                    <th>Jumlah Tangkapan</th>
                     <th>Alamat</th>
                     <th>No.Hp</th>
+                    <th>Keterangan</th>
                 </tr>
             </thead>
-            <tbody
-                {{ range. fishes }}
+            <tbody>
+                {{ range .fishes }}
                     <tr>
                         <td>{{ .NamaLengkap }} </td>
                         <td>{{ .NIK }} </td>
@@ -40,10 +41,12 @@
                         <td>{{ .Alamat }} </td>
                         <td>{{ .Nohp }} </td>
                         <td>
-                            <a href="/fishes/edit?id={{id}}" class="btn btn-sm btn-warning">Edit</a>
-                            <a href="/fishes/delete?id={{id}}"  oneclick="return confirm('Anda ingin menghapus data?')" class="btn btn-sm btn-danger">Hapus</a>
+                            <a href="/fishes/edit" class="btn btn-sm btn-warning">Edit Data</a>
+                            <a href="/fishes/delete" oneclick="return confirm('Anda ingin menghapus data?')" class="btn btn-sm btn-danger">Hapus Data</a>
                         </td>
                     </tr>
+                {{ end }}
+            </tbody>
         </table>
     </div>
 

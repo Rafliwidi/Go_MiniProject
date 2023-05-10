@@ -53,7 +53,7 @@ func (p *fishesmodel) FindAll() ([]entities.Fishes, error) {
 
 func (p *fishesmodel) Create(fishes entities.Fishes) bool {
 
-	result, err := p.conn.Exec("insert into fishes (Nama_Lengkap, NIK, Ukuran_Kapal, Alat_Tangkap, Jumlah_Tangkapan, Alamat, no_hp) values(?,?,?,?,?,?,?)",
+	result, err := p.conn.Exec("insert into fishes (nama_lengkap, nik, ukuran_kapal, alat_tangkap, jumlah_tangkapan, alamat, no_hp) values(?,?,?,?,?,?,?)",
 		fishes.NamaLengkap, fishes.NIK, fishes.UkuranKapal, fishes.AlatTangkap, fishes.JumlahTangkapan, fishes.Alamat, fishes.Nohp)
 
 	if err != nil {
@@ -64,4 +64,16 @@ func (p *fishesmodel) Create(fishes entities.Fishes) bool {
 	lastInsertId, _ := result.LastInsertId()
 
 	return lastInsertId > 0
+}
+
+func (p *fishesmodel) Find(id int64, fishes *entities.Fishes) error {
+	
+	return p.conn.QueryRow("select *From fishes where id = ?", id).Scan(&fishes.Id, 
+		&fishes.NamaLengkap, 
+		&fishes.NIK, 
+		&fishes.UkuranKapal, 
+		&fishes.AlatTangkap, 
+		&fishes.JumlahTangkapan, 
+		&fishes.Alamat, 
+		&fishes.Nohp)
 }
